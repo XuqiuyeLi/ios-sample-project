@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TabTestingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ifI-z5-8ft">
+                                <rect key="frame" x="124.5" y="44" width="165" height="32"/>
+                                <segments>
+                                    <segment title="Upcoming"/>
+                                    <segment title="Past"/>
+                                </segments>
+                                <connections>
+                                    <action selector="eventsFilterValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zcV-Mg-4cj"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4W-53-pAG">
+                                <rect key="frame" x="0.0" y="83" width="414" height="779"/>
+                                <connections>
+                                    <segue destination="w8e-AU-BGF" kind="embed" identifier="showPages" id="Iqx-6h-OVx"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I4W-53-pAG" secondAttribute="bottom" id="O2U-bs-SSN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I4W-53-pAG" secondAttribute="trailing" id="RMh-Ef-d6N"/>
+                            <constraint firstItem="I4W-53-pAG" firstAttribute="top" secondItem="ifI-z5-8ft" secondAttribute="bottom" constant="8" id="Z0W-Dg-dlU"/>
+                            <constraint firstItem="I4W-53-pAG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d0p-ap-fjA"/>
+                            <constraint firstItem="ifI-z5-8ft" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="njq-sE-XHr"/>
+                            <constraint firstItem="ifI-z5-8ft" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wlQ-Pf-faR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="eventsFilterSegmentedControl" destination="ifI-z5-8ft" id="cBk-TS-HtQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Xcg-ek-Mdn">
+            <objects>
+                <pageViewController storyboardIdentifier="EventsFilterPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="w8e-AU-BGF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ei-c2-bMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="138"/>
+        </scene>
+        <!--Upcoming View Controller-->
+        <scene sceneID="rFd-Ru-j0a">
+            <objects>
+                <viewController storyboardIdentifier="UpcomingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D08-rs-YSd" customClass="UpcomingViewController" customModule="TabTestingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ile-fo-cnb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPCOMING EVENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NS-F5-gU7">
+                                <rect key="frame" x="124.5" y="442.5" width="165.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2NS-F5-gU7" firstAttribute="centerX" secondItem="8Qw-8R-4oU" secondAttribute="centerX" id="6OX-fZ-yHk"/>
+                            <constraint firstItem="2NS-F5-gU7" firstAttribute="centerY" secondItem="8Qw-8R-4oU" secondAttribute="centerY" id="DVc-dg-k1a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Qw-8R-4oU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMA-ku-6vN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708.6956521739132" y="391.74107142857139"/>
+        </scene>
+        <!--Past View Controller-->
+        <scene sceneID="1Xn-rB-HE1">
+            <objects>
+                <viewController storyboardIdentifier="PastViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uBH-Cq-MQn" customClass="PastViewController" customModule="TabTestingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7JO-PE-chW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAST EVENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-kU-SdV">
+                                <rect key="frame" x="149.5" y="442.5" width="115.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BfE-kU-SdV" firstAttribute="centerX" secondItem="2gd-4D-W8R" secondAttribute="centerX" id="8Hb-b8-a3I"/>
+                            <constraint firstItem="BfE-kU-SdV" firstAttribute="centerY" secondItem="2gd-4D-W8R" secondAttribute="centerY" id="Ewc-na-vXb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2gd-4D-W8R"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aH-Kp-m2m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2504" y="392"/>
+        </scene>
+    </scenes>
+</document>
